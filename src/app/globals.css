@@ -48,6 +48,15 @@ a {
   font-style: normal;
 }
 
+body {
+  font-family: 'BMJUA', sans-serif;
+}
+
+
+
+
+/* 여기 까지 폰트 설정 */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

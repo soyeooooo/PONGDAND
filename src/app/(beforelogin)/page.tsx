@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "@/app/(beforelogin)/out.module.css"
+import InButton from "@/app/(beforelogin)/_component/InButton";
 
 export default function Home() {
   return (
@@ -15,8 +16,7 @@ export default function Home() {
           fill
           className={styles.waveImage}
         />
-        <button className={`${styles.loginButton} ${styles.customFont}`}>로그인</button>
-        <button className={`${styles.signupButton} ${styles.customFont}`}>회원가입</button>
+        <InButton/>
       </div>
     </div>
   );
