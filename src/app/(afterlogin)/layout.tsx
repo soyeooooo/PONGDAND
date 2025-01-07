@@ -1,19 +1,24 @@
-import React, { ReactNode } from 'react';
-import BottomNavbar from '@/app/(afterlogin)/_component/BottomNavbar';
+import '@/app/globals.css';
+import BottomNavbar from './_component/BottomNavbar';
+import ClientThemeProvider from './ClientThemeProvider';
 
-interface AfterLoginLayoutProps {
-  children: ReactNode;
-}
-
-const AfterLoginLayout: React.FC<AfterLoginLayoutProps> = ({ children }) => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-grow">
-        {children}
-      </main>
-      <BottomNavbar />
-    </div>
-  )
+    <html lang="ko">
+      <body>
+        <ClientThemeProvider>
+          <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            <main style={{ flex: 1 }}>
+              {children}
+            </main>
+            <BottomNavbar />
+          </div>
+        </ClientThemeProvider>
+      </body>
+    </html>
+  );
 }
-
-export default AfterLoginLayout;
